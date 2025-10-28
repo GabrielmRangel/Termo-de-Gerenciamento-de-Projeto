@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo de Gerenciamento de Projeto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            background: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .section-title::before {
+            content: "❖ ";
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+        
+        .form-group {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group.full {
+            flex: 1 1 100%;
+        }
+        
+        .form-group.small {
+            flex: 0 0 200px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #555;
+            min-width: 150px;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        textarea {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+            width: 100%;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: normal;
+            min-width: auto;
+        }
+        
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .subsection {
+            margin-left: 20px;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 3px solid #3498db;
+        }
+        
+        .approval-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #2c3e50;
+        }
+        
+        .approval-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .note strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #856404;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+        
+        .products-subsection {
+            margin-left: 40px;
+        }
+        
+        .indent {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Termo de Gerenciamento de Projeto</h1>
+        
+        <!-- Dados Gerais -->
+        <div class="section">
+            <div class="section-title">Dados Gerais</div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Data Coordenação:</label>
+                    <input type="date">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Razão Social:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>CNPJ / CPF:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Responsável:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Ramo de Atividade:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Setup:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="setup" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="setup" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Horas Coordenação:</label>
+                    <input type="number" step="0.5">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Horas Projeto:</label>
+                    <input type="number" step="0.5">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Horas CNAB:</label>
+                    <input type="number" step="0.5">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Modalidade:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="modalidade" value="saas"> SAAS
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="modalidade" value="cdu"> CDU
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full">
+                    <label>Endereço:</label>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Parâmetros -->
+        <div class="section">
+            <div class="section-title">Parâmetros</div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Empresa:</label>
+                    <input type="text" placeholder="Quantidade de Empresas no Sistema">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Base de Dados:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="base_dados" value="unica"> Única
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="base_dados" value="compartilhada"> Compartilhada
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Regime Tributário:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="regime_tributario" value="simples"> Simples Nacional
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="regime_tributario" value="presumido"> Lucro Presumido
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="regime_tributario" value="real"> Lucro Real
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Importação de Dados:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="importacao_dados" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="importacao_dados" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="form-row">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="cadastro_clientes"> Cadastro de Clientes
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="cadastro_fornecedores"> Fornecedores
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="cadastro_transportadoras"> Transportadoras
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="cadastro_produtos"> Cadastro de Produtos
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>NF-e:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="nfe" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="nfe" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>NF-s:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="nfs" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="nfs" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Tem Subst. Tributária?:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="subst_tributaria" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="subst_tributaria" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full">
+                    <label>Observações:</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Estoque -->
+        <div class="section">
+            <div class="section-title">Estoque</div>
+            
+            <div class="form-row">
+                <div class="form-group full">
+                    <label>Produtos:</label>
+                </div>
+            </div>
+            
+            <div class="products-subsection">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Compra de Matéria Prima:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="radio" name="materia_prima" value="sim"> Sim
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="radio" name="materia_prima" value="nao"> Não
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Compra de Produtos Acabados:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="radio" name="produtos_acabados" value="sim"> Sim
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="radio" name="produtos_acabados" value="nao"> Não
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Compra de Mercadoria do Exterior:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="radio" name="mercadoria_exterior" value="sim"> Sim
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="radio" name="mercadoria_exterior" value="nao"> Não
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Lote:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="lote" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="lote" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Armazéns:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Terceiros:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="terceiros" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="terceiros" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Estrutura:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="estrutura" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="estrutura" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Ordem de Produção:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="ordem_producao" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="ordem_producao" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Ponto de Pedido:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="ponto_pedido" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="ponto_pedido" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Compras -->
+        <div class="section">
+            <div class="section-title">Compras</div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Solicitação:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="compras_solicitacao" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="compras_solicitacao" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Cotação:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="compras_cotacao" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="compras_cotacao" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Pedido:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="compras_pedido" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="compras_pedido" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Importação:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="compras_importacao" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="compras_importacao" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Faturamento -->
+        <div class="section">
+            <div class="section-title">Faturamento</div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Ordem de serviço:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="ordem_servico" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="ordem_servico" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Orçamento:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="orcamento" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="orcamento" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Pedido:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="faturamento_pedido" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="faturamento_pedido" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Faturamento:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="faturamento" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="faturamento" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Formação PV:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="formacao_pv" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="formacao_pv" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Tabela de preço:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="tabela_preco" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="tabela_preco" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Comissão:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="comissao" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="comissao" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="note">
+                <strong>Observação:</strong>
+                Certificado A1. Verificar se o cliente já possui o Certificado Digital em formato A1 em arquivo.
+            </div>
+        </div>
+        
+        <!-- Financeiro -->
+        <div class="section">
+            <div class="section-title">Financeiro</div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>CNAB / Boleto:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="cnab_boleto" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="cnab_boleto" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group small">
+                    <label>Bancos:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Contas a Receber:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="contas_receber" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="contas_receber" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Contas a Pagar:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="contas_pagar" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="contas_pagar" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Trans. Programadas:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="trans_programadas" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="trans_programadas" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Centro de Custo:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="centro_custo" value="sim"> Sim
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="centro_custo" value="nao"> Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cronograma -->
+        <div class="section">
+            <div class="section-title">Cronograma</div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Analista de Projeto:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Previsão de Início:</label>
+                    <input type="date">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Cancelamento Agenda:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full">
+                    <label>Observações:</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nome do Consultor:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="note">
+                <strong>*Obs.:</strong>
+                Orientação sobre o recebimento do Kit Boas Vindas de cadastramento de usuários junto à Totvs, orientação no processo de abertura de chamado, acesso ao HD via Chat.
+            </div>
+        </div>
+        
+        <!-- Aprovação -->
+        <div class="approval-section">
+            <div class="approval-title">Aprovação:</div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Aprovado por:</label>
+                    <input type="text">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Data:</label>
+                    <input type="date">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
